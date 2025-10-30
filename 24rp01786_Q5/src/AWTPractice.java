@@ -11,11 +11,9 @@ public class AWTPractice extends Frame implements ActionListener {
     public AWTPractice() {
         // Frame setup
         setTitle("Login Page");
-        setSize(500, 400);
+        setSize(600, 450);
         setLayout(new BorderLayout());
         setVisible(true);
-
-
 
         // Panels
         Panel header = new Panel();
@@ -46,21 +44,28 @@ public class AWTPractice extends Frame implements ActionListener {
         footerPanel.setBackground(Color.DARK_GRAY);
 
         // Layouts
-        header.setLayout(new BorderLayout());
+        header.setLayout(null);
         mainPanel.setLayout(null);
+        leftPanel.setLayout(null);
+        rightPanel.setLayout(null);
+        footerPanel.setLayout(null);
 
-        // Header content
-        header.add(lbHeader, BorderLayout.CENTER);
+        // ====== COMPONENT SIZES AND POSITIONS ======
+        header.setPreferredSize(new Dimension(100, 60));
+        footerPanel.setPreferredSize(new Dimension(100, 40));
+        leftPanel.setPreferredSize(new Dimension(100, 100));
+        rightPanel.setPreferredSize(new Dimension(100, 100));
 
-        // Main panel positioning
-        lbUsername.setBounds(100, 80, 80, 25);
-        lbPassword.setBounds(100, 130, 80, 25);
-        txtUsername.setBounds(200, 80, 150, 25);
-        txtPassword.setBounds(200, 130, 150, 25);
-        bLogin.setBounds(200, 190, 80, 30);
+        lbHeader.setBounds(180, 20, 250, 25);
+        lbHeader.setFont(new Font("Arial", Font.BOLD, 18));
+        lbUsername.setBounds(100, 90, 80, 25);
+        lbPassword.setBounds(100, 140, 80, 25);
+        txtUsername.setBounds(220, 90, 150, 30);
+        txtPassword.setBounds(220, 140, 150, 30);
+        bLogin.setBounds(220, 210, 150, 35);
 
-
-        // Add to main panel
+        // Add components to panels
+        header.add(lbHeader);
         mainPanel.add(lbUsername);
         mainPanel.add(txtUsername);
         mainPanel.add(lbPassword);
